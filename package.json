@@ -1,0 +1,50 @@
+{
+  "name": "skypay-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "flow": "flow",
+    "flow:check": "flow check ./src/"
+  },
+  "author": "shubham choubey",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "chai": "^4.1.2",
+    "eslint": "4.16.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "flow-bin": "^0.69.0",
+    "mocha": "^5.0.5",
+    "pre-commit": "1.2.2",
+    "sequelize-mocking": "^1.3.3",
+    "sinon": "^4.5.0"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "express-validation": "^1.0.2",
+    "helmet": "^3.12.0",
+    "hpp": "^0.2.2",
+    "joi": "^13.1.2",
+    "jsonapi-serializer": "^3.5.6",
+    "jsonwebtoken": "^8.2.0",
+    "path": "^0.12.7",
+    "request": "^2.85.0",
+    "sequelize": "^4.37.5",
+    "sequelize-cli": "^4.0.0",
+    "tedious": "^2.3.1",
+    "winston": "^2.4.1"
+  }
+}
