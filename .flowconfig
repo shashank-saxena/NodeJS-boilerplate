@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/.*
+.*/logs/.*
+.*/seeders/.*
+.*/tests/.*
+.*/config/.*
+.*/build/.*
+[include]
+./src/**/*.js
+ server.js
+[libs]
+flow-typed
+[lints]
+
+[options]
+all=false
+[strict]
