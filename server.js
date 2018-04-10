@@ -1,4 +1,3 @@
-'use strict';
 require('dotenv').config();
 const express = require('express');
 const app = express();
@@ -15,10 +14,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(helmet());
 app.use(hpp());
-app.get('/', function (req, res){
-	res.send("Hello World....!!!!");
+app.use(function(req, res, next) { req.body.startTime = Date.now(); next(); });
+app.get('/', function(req, res) {
+  res.send('Hello World....!!!!');
 });
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
+require('./build/routes/operator')(app, router);
 
 module.exports = app;

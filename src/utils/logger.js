@@ -1,4 +1,3 @@
-'use strict';
 let winston = require('winston');
 let path = require('path');
 
@@ -63,7 +62,7 @@ function logger() {
       exitOnError: false
     }),
     error: new winston.Logger({
-      transports: [ new winston.transports.Console(),new winston.transports.File({
+      transports: [ new winston.transports.Console(), new winston.transports.File({
         level: 'error',
         formatter: formatter,
         filename: errorLog,

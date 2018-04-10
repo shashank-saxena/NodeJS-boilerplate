@@ -59,5 +59,11 @@ module.exports = {
     "space-in-parens": [ 2, "never" ],
     "space-infix-ops": 2,
     "space-unary-ops": 2
-  }
+  },
+  "extends": [
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ]
 };

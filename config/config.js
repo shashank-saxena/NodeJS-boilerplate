@@ -1,23 +1,9 @@
-{
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+module.exports = {
+  development: {
+    username: 'dbuser1',
+    password: 'r00tMssql',
+    database: 'skypay',
+    host: 'mssqldb.crhtk6bskfig.us-west-2.rds.amazonaws.com',
+    dialect: 'mssql'
   }
-}
+};
