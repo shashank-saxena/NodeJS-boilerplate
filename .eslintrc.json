@@ -1,8 +1,10 @@
 {
+	"parser": "babel-eslint",
 	"extends": "standard",
 	"plugins": [
 		"standard",
-		"promise"
+		"promise",
+		"flowtype"
 	],
 	"env": {
 		"node": true,
@@ -30,6 +32,7 @@
 		"globalReturn": true
 	},
   "rules": {
-    "semi": [ 2, "always" ]
+    "semi": [ 2, "always" ],
+		"quotes": [ 2, "double", "avoid-escape" ]
   }
 }

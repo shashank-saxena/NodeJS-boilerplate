@@ -11,11 +11,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-versions": "node ./validate-environment",
-
     "transpile": "babel src/ -d build/",
     "flow-check": "flow status",
     "build": "npm run flow-check && npm run transpile",
-
     "dev": "npm run check-versions && npm run dev-build && NODE_ENV=development node --inspect index",
     "stage": "npm run check-versions && npm run build && NODE_ENV=staging node index",
     "prestart": "npm run check-versions && npm run build",
@@ -36,9 +34,11 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
     "babel-preset-flow": "^6.23.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
