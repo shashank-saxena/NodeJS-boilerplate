@@ -10,14 +10,14 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check-versions": "node ./validate-environment",
+    "check-version": "node ./validate-environment",
     "transpile": "babel src/ -d build/",
     "flow-check": "flow status",
     "build": "npm run flow-check && npm run transpile",
-    "dev": "npm run check-versions && npm run dev-build && NODE_ENV=development node --inspect index",
-    "stage": "npm run check-versions && npm run build && NODE_ENV=staging node index",
-    "prestart": "npm run check-versions && npm run build",
-    "start": "node index"
+    "dev": "npm run check-version && npm run dev-build && NODE_ENV=development node --inspect index",
+    "stage": "npm run check-version && npm run build && NODE_ENV=staging node index",
+    "prestart": "npm run check-version && npm run build",
+    "start": "NODE_ENV=production node index"
   },
   "directories": {
     "test": "tests"
@@ -44,5 +44,9 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.69.0"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "semver": "^5.5.0"
   }
 }

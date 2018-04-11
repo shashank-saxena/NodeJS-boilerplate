@@ -1,5 +1,6 @@
 'use strict';
 
+// TODO(Shashank): we can keep `semver` in lib so that we check for node version before npm install too
 var semver = require('semver');
 var config = require('./package.json');
 
