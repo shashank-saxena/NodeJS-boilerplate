@@ -1,53 +1,37 @@
 {
-  "name": "skypay-boilerplate",
+  "name": "nodejs-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "sample structure to use in node js projects",
+  "main": "index.js",
+  "engines": {
+    "node": "=8.11.1",
+    "npm": "=5.8.0"
+  },
+  "private": true,
   "scripts": {
     "flow": "flow",
-    "flow:check": "flow check ./src/"
+    "flow:check": "flow check ./src/",
+    "check-versions": "node ./validate-environment",
+    "dev": "npm run check-versions && NODE_ENV=development node --inspect index",
+    "stage": "npm run check-versions && NODE_ENV=staging node index",
+    "prestart": "npm run check-versions",
+    "start": "node index",
   },
-  "author": "shubham choubey",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-flow": "^6.23.0",
-    "chai": "^4.1.2",
-    "eslint": "^4.16.0",
-    "eslint-config-standard": "11.0.0-beta.0",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-standard": "3.0.1",
-    "flow": "^0.2.3",
-    "flow-bin": "^0.69.0",
-    "mocha": "^5.0.5",
-    "pre-commit": "1.2.2",
-    "sequelize-mocking": "^1.3.3",
-    "sinon": "^4.5.0"
+  "directories": {
+    "test": "tests"
   },
-  "pre-commit": [
-    "eslint"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-newput:shashank-saxena/NodeJS-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs",
+    "boilerplate"
   ],
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "dotenv": "^5.0.1",
-    "express": "^4.16.3",
-    "express-jwt": "^5.3.1",
-    "express-validation": "^1.0.2",
-    "helmet": "^3.12.0",
-    "hpp": "^0.2.2",
-    "joi": "^13.1.2",
-    "jsonapi-serializer": "^3.5.6",
-    "jsonwebtoken": "^8.2.0",
-    "path": "^0.12.7",
-    "request": "^2.85.0",
-    "sequelize": "^4.37.5",
-    "sequelize-cli": "^4.0.0",
-    "tedious": "^2.3.1",
-    "winston": "^2.4.1"
-  }
+  "author": "",
+  "license": "MIT"
 }
