@@ -1,17 +1,25 @@
 [ignore]
 .*/node_modules/.*
-.*/logs/.*
 .*/seeders/.*
 .*/tests/.*
-.*/config/.*
 .*/build/.*
+
 [include]
-./src/**/*.js
- server.js
+./src
+
 [libs]
-flow-typed
+./lib
+
 [lints]
+all=error
 
 [options]
-all=false
+all=true
+emoji=true
+include_warnings=true
+module.use_strict=true
+
 [strict]
+
+[version]
+0.69.0

@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, DataTypes) => {
   var Operator = sequelize.define('Operator', {
     firstName: {
@@ -25,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     roleId: DataTypes.INTEGER,
     password: DataTypes.STRING
   }, {});
-  Operator.associate = function(models) {
+  Operator.associate = function (models) {
     // associations can be defined here
   };
   return Operator;
