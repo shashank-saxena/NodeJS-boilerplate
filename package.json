@@ -11,12 +11,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-version": "node ./validate-environment",
-    "transpile": "babel src/ -d build/",
-    "flow-check": "flow status",
-    "build": "npm run flow-check && npm run transpile",
-    "dev": "npm run check-version && npm run build && NODE_ENV=development node --inspect index",
-    "stage": "npm run check-version && npm run build && NODE_ENV=staging node index",
-    "prestart": "npm run check-version && npm run build",
+    "eslint": "eslint *.js",
+    "build": "npm run check-version && npm run eslint",
+    "dev": "npm run build && NODE_ENV=development node --inspect index",
+    "stage": "npm run build && NODE_ENV=staging node index",
+    "prestart": "npm run build",
     "start": "NODE_ENV=production node index"
   },
   "directories": {
@@ -33,17 +32,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-flow": "^6.23.0",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-flowtype": "^2.46.1",
-    "eslint-plugin-import": "^2.10.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.69.0"
+    "eslint": "^4.19.1"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

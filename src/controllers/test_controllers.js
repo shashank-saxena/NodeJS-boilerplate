@@ -1,4 +1,4 @@
-// // @flow
+// 
 // function user (): any {
 //   return {
 //     login: function (req:any, res:number) : any {

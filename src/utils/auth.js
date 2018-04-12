@@ -1,5 +1,5 @@
 // let jwt = require('jsonwebtoken');
-// // @flow
+// 
 // function auth() {
 //
 //   function prepareAuthResponse(hash: any): any {

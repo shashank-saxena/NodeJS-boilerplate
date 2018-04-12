@@ -1,4 +1,4 @@
-// @flow
+
 function user (): any {
   return {
     get: function (req: any, res: any): void {

@@ -1,4 +1,4 @@
-// // @flow
+// 
 // function response(): any {
 //   return {
 //     sendResponse: function(req: any, success: boolean, responseCode: number, data?: any, error?: any, message?: string): ResponseObj {
