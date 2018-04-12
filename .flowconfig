@@ -11,12 +11,12 @@
 ./lib
 
 [lints]
-all=error
+all=warn
 
 [options]
-all=true
+all=false
 emoji=true
-include_warnings=true
+include_warnings=false
 module.use_strict=true
 
 [strict]
