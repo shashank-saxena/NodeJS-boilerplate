@@ -3,3 +3,5 @@ node_modules
 enviroment/.development
 enviroment/.staging
 enviroment/.production
+build
+npm-debug.log

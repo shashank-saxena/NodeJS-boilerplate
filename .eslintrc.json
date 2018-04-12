@@ -10,27 +10,6 @@
 		"node": true,
 		"es6": true
 	},
-	"ecmaFeatures": {
-		"arrowFunctions": false,
-		"blockBindings": true,
-		"classes": false,
-		"defaultParameters": true,
-		"destructuring": true,
-		"forOf": true,
-		"generators": true,
-		"modules": true,
-		"objectLiteralComputedProperties": true,
-		"objectLiteralDuplicateProperties": true,
-		"objectLiteralShorthandMethods": true,
-		"objectLiteralShorthandProperties": true,
-		"regexUFlag": true,
-		"regexYFlag": true,
-		"restParams": true,
-		"spread": true,
-		"superInFunctions": true,
-		"templateStrings": true,
-		"globalReturn": true
-	},
   "rules": {
     "semi": [ 2, "always" ],
 		"quotes": [ 2, "double", "avoid-escape" ]

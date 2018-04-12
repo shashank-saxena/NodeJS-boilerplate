@@ -18,6 +18,7 @@ all=false
 emoji=true
 include_warnings=false
 module.use_strict=true
+module.system.node.resolve_dirname=node_modules
 
 [strict]
 

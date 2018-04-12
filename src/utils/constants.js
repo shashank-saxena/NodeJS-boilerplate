@@ -1,3 +1,8 @@
+// @flow
 "use strict";
 
-module.exports = {};
+const DEBUG_MODE: boolean = true;
+
+module.exports = {
+  DEBUG_MODE
+};
