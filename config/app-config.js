@@ -1,10 +1,11 @@
 "use strict";
 
-var env = require("dotenv");
-var fs = require("fs");
+const env = require("dotenv");
+const fs = require("fs");
+const path = require("path");
 
-function loadEnvVars () {
-  var envFilePath = "../environment/";
+function loadEnvVars() {
+  let envFilePath = "enviroment/";
 
   if (process.env.NODE_ENV === "development") {
     envFilePath += ".development";
@@ -16,18 +17,19 @@ function loadEnvVars () {
     envFilePath = null;
   }
 
-  if (fs.existsSync(envFilePath)) {
-    env.config(envFilePath);
+  if (fs.existsSync(path.resolve(envFilePath))) {
+    env.config({ "path": path.resolve(envFilePath) });
   }
 }
 
-function appConfig () {
+function appConfig() {
   loadEnvVars();
 
   return {
     "DEBUG": process.env.DEBUG,
     "ENV": process.env.NODE_ENV,
-    "PORT": (process.env.PORT || 3000)
+    "PORT": (process.env.PORT || 3000),
+    "API_VERSIONS": [ "v2" ]
   };
 }
 

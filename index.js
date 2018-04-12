@@ -1,31 +1,34 @@
-require("dotenv").config();
+"use strict";
+
 const express = require("express");
-const app = express();
+const bodyParser = require("body-parser");
+
 // let helmet = require("helmet");
 // let hpp = require("hpp");
 // let cors = require("cors");
 // let router = express.Router();
-let bodyParser = require("body-parser");
 
-app.use(bodyParser.urlencoded({
-  "extended": true
-}));
+const appConfig = require("./config/app-config");
+const appRoutes = require("./src/routes/app-routes");
 
+const app = express();
+
+app.use(bodyParser.urlencoded({ "extended": true }));
 app.use(bodyParser.json());
+
 // app.use(cors());
 // app.use(helmet());
 // app.use(hpp());
+
+// set time to calculate processing time for a response
 app.use(function(req, res, next) {
   req.body.startTime = Date.now();
   next();
 });
-app.get("/", function(req, res) {
-  res.send("Hello World....!!!!");
+
+// register all app level routes
+appRoutes(app);
+
+app.listen(appConfig.PORT, null, function() {
+  console.log("Express webserver configured and listening at http://localhost:" + appConfig.PORT);
 });
-
-app.listen(3000, () => console.log("Example app listening on port 3000!"));
-app.use("/operators", require("./build/routes/operator"));
-app.use("/aircrafts", require("./build/routes/aircraft"));
-// require("./build/routes/operator")(app, router);
-
-module.exports = app;

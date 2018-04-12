@@ -23,6 +23,7 @@
     "no-irregular-whitespace": 2,
     "no-negated-in-lhs": 2,
     "no-unreachable": 2,
+    "no-var": 2,
     "use-isnan": 2,
     "valid-typeof": 2,
 

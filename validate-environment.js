@@ -1,11 +1,11 @@
 "use strict";
 
 // TODO(Shashank): we can keep `semver` in lib so that we check for node version before npm install too
-var semver = require("semver");
-var config = require("./package.json");
+let semver = require("semver");
+let config = require("./package.json");
 
-var nodeVersion = config.engines.node;
-var npmVersion = config.engines.npm;
+let nodeVersion = config.engines.node;
+let npmVersion = config.engines.npm;
 
 if (!semver.satisfies(process.version, nodeVersion)) {
   console.log("Required node version " + nodeVersion + " not satisfied with current version " + process.version + ".");

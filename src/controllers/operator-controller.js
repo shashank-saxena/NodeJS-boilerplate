@@ -1,7 +1,7 @@
-
-function user (): any {
+"use strict";
+function user() {
   return {
-    get: function (req: any, res: any): void {
+    "get": function (req, res) {
       res.send("get operators");
     }
   };
