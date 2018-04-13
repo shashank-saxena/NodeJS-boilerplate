@@ -23,6 +23,8 @@ function operatorRoutes() {
 
   operatorRouter.get("/", operatorController.get);
 
+  operatorRouter.get("/:id", operatorController.getByID);
+
   operatorRouter.get("/:id/aircraft", function(req, res) {
     res.send("get operator's aircraft");
   });
