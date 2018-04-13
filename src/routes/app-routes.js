@@ -35,13 +35,16 @@ function routes(appServer) {
     res.send("Hello World....!!!!");
   });
 
-  let appConfig = require("../../config/app-config");
+  // let appConfig = require("../../config/app-config");
 
-  if (appConfig.API_VERSIONS.includes("v1")) {
-    appServer.use("/operators", operatorRoutes());
-  } else {
-    appServer.use("/aircrafts", aircraftRoutes());
-  }
+  appServer.use("/operators", operatorRoutes());
+  appServer.use("/aircrafts", aircraftRoutes());
+
+  // if (appConfig.API_VERSIONS.includes("v1")) {
+  //   appServer.use("/operators", operatorRoutes());
+  // } else {
+  //   appServer.use("/aircrafts", aircraftRoutes());
+  // }
   // appServer.use("/operators", operatorRoutes());
 }
 
