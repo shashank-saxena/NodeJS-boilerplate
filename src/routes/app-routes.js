@@ -23,6 +23,12 @@ function operatorRoutes() {
 
   operatorRouter.get("/", operatorController.get);
 
+  // validate
+  let validator = require("express-validation");
+  let validationSchema = require("../request_validations/operator-validator");
+
+  operatorRouter.post("/", validator(validationSchema), operatorController.create);
+
   operatorRouter.get("/:id", operatorController.getByID);
 
   operatorRouter.get("/:id/aircraft", function(req, res) {

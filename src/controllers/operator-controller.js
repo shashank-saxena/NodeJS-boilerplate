@@ -10,7 +10,7 @@ function user() {
       let log = require("../utils/logger");
       let reqIP = req.connection.remoteAddress;
       let reqHeader = JSON.stringify(res.req.headers);
-      let resAPI = JSON.stringify( { "result": "shub am " } );
+      let resAPI = JSON.stringify( { "result": "result" } );
 
       log.error.error("Request IP : " + reqIP + ", Request headers : " + reqHeader + ", API Response : " + JSON.stringify(resAPI));
       res.send("get operators");
@@ -20,7 +20,9 @@ function user() {
       let serializedData = serializer.serialize(data);
 
       res.send(serializedData.data);
-
+    },
+    "create": function(req, res) {
+      res.send(req.body);
     }
   };
 }
