@@ -4,3 +4,4 @@ enviroment/.development
 enviroment/.staging
 enviroment/.production
 npm-debug.log
+logs
