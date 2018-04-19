@@ -21,8 +21,25 @@ function user() {
 
       res.send(serializedData.data);
     },
+    "getAuthToken": function(req, res) {
+      const bbvaAuthService = require("../services/bbva-auth");
+      let result = bbvaAuthService.getAuthToken();
+
+      result.then(function(body) {
+        res.send(body.access_token);
+      }).catch(function(err) {
+        res.send(err);
+      });
+    },
     "create": function(req, res) {
-      res.send(req.body);
+      const bbvaAuthService = require("../services/bbva-consumer");
+      let result = bbvaAuthService.create();
+
+      result.then(function(body) {
+        res.send(body);
+      }).catch(function(err) {
+        res.send(err);
+      });
     }
   };
 }

@@ -29,7 +29,9 @@ function appConfig() {
     "DEBUG": process.env.DEBUG,
     "ENV": process.env.NODE_ENV,
     "PORT": (process.env.PORT || 3000),
-    "API_VERSIONS": [ "v2" ]
+    "API_VERSIONS": [ "v2" ],
+    "BBVA_APP_SECRET": process.env.BBVA_APP_SECRET,
+    "BBVA_APP_ID": process.env.BBVA_APP_ID
   };
 }
 
