@@ -27,13 +27,18 @@ function operatorRoutes() {
   let validator = require("express-validation");
   let validationSchema = require("../request_validations/operator-validator");
 
-  operatorRouter.post("/", validator(validationSchema), operatorController.create);
-
-  operatorRouter.get("/:id", operatorController.getByID);
-
+  // operatorRouter.post("/", validator(validationSchema), operatorController.create);
+  //
+  operatorRouter.get("/:id(\d+)", operatorController.getByID);
+  //
   operatorRouter.get("/:id/aircraft", function(req, res) {
     res.send("get operator's aircraft");
   });
+
+  operatorRouter.get("/token", operatorController.getAuthToken);
+
+  operatorRouter.get("/consumer", operatorController.create);
+
   return operatorRouter;
 }
 
