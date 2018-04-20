@@ -4,7 +4,15 @@
 		"node": true
 	},
 	"extends": "eslint:recommended",
+  "plugins": [
+    "filenames",
+    "json"
+  ],
 	"rules": {
+    "filenames/match-regex": [ 2, "^[a-z-]+$", true ],
+    "filenames/match-exported": [ 2, "kebab" ],
+    "filenames/no-index": 2,
+		"no-useless-escape": 0,
     "linebreak-style": [ 2, "unix" ],
     "comma-dangle": [ 2, "never" ],
     "no-console": 1,
