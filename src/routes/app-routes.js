@@ -2,6 +2,7 @@
 
 const express = require("express");
 
+
 function aircraftRoutes() {
   // eslint-disable-next-line new-cap
   let aircraftRouter = express.Router();
@@ -29,7 +30,7 @@ function operatorRoutes() {
   return operatorRouter;
 }
 
-function routes(appServer) {
+function appRoutes(appServer) {
   // default route handling for the app
   appServer.get("/", function(req, res) {
     res.send("Hello World....!!!!");
@@ -48,4 +49,4 @@ function routes(appServer) {
   // appServer.use("/operators", operatorRoutes());
 }
 
-module.exports = routes;
+module.exports = appRoutes;

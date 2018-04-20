@@ -9,10 +9,17 @@
   },
   "private": true,
   "scripts": {
+    "commitmsg": "node scripts/js/commit-message --gitParams=$GIT_PARAMS",
+    "precommit": "node scripts/js/pre-commit",
+    "prepush": "node scripts/js/pre-push",
+    "postcheckout": "node scripts/js/post-checkout",
+    "postmerge": "node scripts/js/post-merge",
+
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-version": "node ./validate-environment",
     "eslint": "eslint *.js",
-    "build": "npm run check-version && npm run eslint",
+    "build": "run-s check-version eslint",
+
     "dev": "npm run build && NODE_ENV=development node --inspect index",
     "stage": "npm run build && NODE_ENV=staging node index",
     "prestart": "npm run build",
@@ -32,14 +39,22 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "chalk": "~2.4.0",
+    "eslint": "~4.19.1",
+    "eslint-plugin-filenames": "github:shashank-saxena/eslint-plugin-filenames",
+    "eslint-plugin-json": "~1.2.0",
+    "husky": "~0.14.3",
+    "npm-run-all": "~4.1.2",
+    "yaml-lint": "~1.2.3",
+    "yargs": "~11.0.0"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "dotenv": "^5.0.1",
-    "express": "^4.16.3",
-    "jsonapi-serializer": "^3.5.6",
-    "semver": "^5.5.0",
-    "winston": "^2.4.1"
+    "body-parser": "~1.18.2",
+    "dotenv": "~5.0.1",
+    "express": "~4.16.3",
+    "jsonapi-serializer": "~3.5.6",
+    "semver": "~5.5.0",
+    "shelljs": "~0.8.1",
+    "winston": "~2.4.1"
   }
 }
