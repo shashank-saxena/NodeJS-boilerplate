@@ -4,7 +4,7 @@
 changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
 
 check_run() {
-	echo "$changed_files" | grep --quiet "$1" && eval "$2"
+	echo "$changed_files" | grep --quiet "$1" && eval "$2" && exit 0
 }
 
 # In this example it's used to run `npm install` if package.json changed
