@@ -12,14 +12,12 @@
     "commitmsg": "node scripts/js/commit-message --gitParams=$GIT_PARAMS",
     "precommit": "node scripts/js/pre-commit",
     "prepush": "node scripts/js/pre-push",
-    "postcheckout": "node scripts/js/post-checkout",
-    "postmerge": "node scripts/js/post-merge",
-
+    "postcheckout": "./scripts/bash/post-checkout",
+    "postmerge": "./scripts/bash/post-merge",
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-version": "node ./validate-environment",
     "eslint": "eslint *.js",
     "build": "run-s check-version eslint",
-
     "dev": "npm run build && NODE_ENV=development node --inspect index",
     "stage": "npm run build && NODE_ENV=staging node index",
     "prestart": "npm run build",

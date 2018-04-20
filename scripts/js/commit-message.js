@@ -10,7 +10,7 @@ function commitMessage() {
 
   let commitMsg = shell.cat(argv.gitParams);
 
-  shell.echo(chalk.green("Commit Message: Checks started \n"));
+  shell.echo(chalk.green("Commit Message: Checks started"));
 
   if (commitMsg.trim().length > config.COMMIT_MSG_LENGTH) {
     shell.echo(chalk.red("Your commit message is too long, keep it less than 64 chars!"));
