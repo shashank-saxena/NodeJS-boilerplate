@@ -55,10 +55,7 @@ function verifyInstallation() {
   let isPackagaeJsonExists = (stagedJsonFiles.trim().indexOf("package.json") !== -1);
   let isPackageLockExists = (stagedJsonFiles.trim().indexOf("package-lock.json") !== -1);
 
-  if (isPackagaeJsonExists && !isPackageLockExists) {
-    logs.push(chalk.red("npm packages: You have changed package.json file, you have to commit package-lock.json file too!"));
-    exitOnError = true;
-  } else if (!isPackagaeJsonExists && isPackageLockExists) {
+  if (!isPackagaeJsonExists && isPackageLockExists) {
     logs.push(chalk.red("npm packages: Change detected in package-lock.json file, without any changes in package.json!"));
     exitOnError = true;
   } else {
