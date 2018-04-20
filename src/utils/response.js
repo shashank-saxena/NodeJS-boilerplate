@@ -1,4 +1,5 @@
 "use strict";
+
 function response() {
   return {
     "sendResponse": function(req, success, responseCode, data = null, error = null, message = null) {

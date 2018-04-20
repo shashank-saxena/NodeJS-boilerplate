@@ -1,0 +1,5 @@
+{
+  "COMMIT_MSG_LENGTH": 64,
+  "VALIDATE_DIR_FILE_NAMES": [ "controllers", "helpers", "models", "routes", "serializers", "services" ],
+  "DISABLE_BRANCHES_PUSH": ["master"]
+}
