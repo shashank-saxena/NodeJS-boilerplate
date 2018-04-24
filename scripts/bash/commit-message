@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+MAX_COMMIT_MSG_LEN=64;
+
+if [ ${#1} -gt $MAX_COMMIT_MSG_LEN ]
+then
+  echo "Your commit message is too long, keep it short!" ;
+  exit 1;
+else
+  echo "Commit message is OK"
+  exit 0;
+fi

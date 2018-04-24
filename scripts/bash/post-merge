@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Run `chmod +x post-merge` to make it executable
 changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
@@ -9,3 +9,4 @@ check_run() {
 
 # In this example it's used to run `npm install` if package.json changed
 check_run package.json "npm install"
+exit 0
