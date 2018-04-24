@@ -9,7 +9,7 @@
   },
   "private": true,
   "scripts": {
-    "commitmsg": "node scripts/js/commit-message --gitParams=$GIT_PARAMS",
+    "commitmsg": "./scripts/bash/commit-message",
     "precommit": "node scripts/js/pre-commit",
     "prepush": "node scripts/js/pre-push",
     "postcheckout": "./scripts/bash/post-checkout",
