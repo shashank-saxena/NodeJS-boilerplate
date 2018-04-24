@@ -9,7 +9,7 @@
     "json"
   ],
 	"rules": {
-    "filenames/match-regex": [ 2, "^[a-z-]+$", true ],
+    "filenames/match-regex": [ 2, "^[a-z0-9-]+$", true ],
     "filenames/match-exported": [ 2, "kebab" ],
     "filenames/no-index": 2,
 
