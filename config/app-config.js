@@ -31,7 +31,13 @@ function appConfig() {
     "PORT": (process.env.PORT || 3000),
     "API_VERSIONS": [ "v2" ],
     "BBVA_APP_SECRET": process.env.BBVA_APP_SECRET,
-    "BBVA_APP_ID": process.env.BBVA_APP_ID
+    "BBVA_APP_ID": process.env.BBVA_APP_ID,
+    "DB_HOST": process.env.DB_HOST,
+    "DB_USER": process.env.DB_USER,
+    "DB_NAME": process.env.DB_NAME,
+    "DB_PASSWORD": process.env.DB_PASSWORD,
+    "DB_DIALECT": process.env.DB_DIALECT,
+    "BBVA_CONSUMER_ID": process.env.BBVA_CONSUMER_ID
   };
 }
 

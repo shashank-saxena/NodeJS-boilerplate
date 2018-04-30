@@ -1,46 +1,28 @@
 "use strict";
 
 const express = require("express");
+const tokenVerification = require("../middlewares/token-verification");
 
-
-function aircraftRoutes() {
+function authRoutes() {
   // eslint-disable-next-line new-cap
-  let aircraftRouter = express.Router();
+  let authRouter = express.Router();
+  let authController = require("../controllers/auth-controller");
+  let userFields = require("./request-validators/token-request-validator");
 
-  aircraftRouter.get("/", function(req, res) {
-    res.send("get all aircrafts");
-  });
-
-  aircraftRouter.get("/:id", function(req, res) {
-    res.send("get aircraft by id");
-  });
-  return aircraftRouter;
+  authRouter.post("/token", userFields.fieldsRule, userFields.fieldsValidation, authController.getAuthToken);
+  return authRouter;
 }
 
-function operatorRoutes() {
+
+// payment-routes
+function paymentRoutes() {
   // eslint-disable-next-line new-cap
-  let operatorRouter = express.Router();
-  let operatorController = require("../controllers/operator-controller");
+  let paymentRouter = express.Router();
+  let paymentController = require("../controllers/payment-controller");
+  let moveMoneyValidator = require("./request-validators/move-money-schema");
 
-  operatorRouter.get("/", operatorController.get);
-
-  // validate
-  // let validator = require("express-validation");
-  // let validationSchema = require("../request_validations/operator-validator");
-
-  // operatorRouter.post("/", validator(validationSchema), operatorController.create);
-  //
-  operatorRouter.get("/:id(\d+)", operatorController.getByID);
-  //
-  operatorRouter.get("/:id/aircraft", function(req, res) {
-    res.send("get operator's aircraft");
-  });
-
-  operatorRouter.get("/token", operatorController.getAuthToken);
-
-  operatorRouter.get("/consumer", operatorController.create);
-
-  return operatorRouter;
+  paymentRouter.post("/move-money", moveMoneyValidator.fieldsRule, moveMoneyValidator.fieldsValidation, tokenVerification.verifyToken("admin"), paymentController.moveMoney);
+  return paymentRouter;
 }
 
 function appRoutes(appServer) {
@@ -49,17 +31,8 @@ function appRoutes(appServer) {
     res.send("Hello World....!!!!");
   });
 
-  // let appConfig = require("../../config/app-config");
-
-  appServer.use("/operators", operatorRoutes());
-  appServer.use("/aircrafts", aircraftRoutes());
-
-  // if (appConfig.API_VERSIONS.includes("v1")) {
-  //   appServer.use("/operators", operatorRoutes());
-  // } else {
-  //   appServer.use("/aircrafts", aircraftRoutes());
-  // }
-  // appServer.use("/operators", operatorRoutes());
+  appServer.use("/auth", authRoutes());
+  appServer.use("/payments", paymentRoutes());
 }
 
 module.exports = appRoutes;

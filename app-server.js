@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // set time to calculate processing time for a response
 app.use(function(req, res, next) {
-  req.body.startTime = Date.now();
+  req.startTime = Date.now();
   next();
 });
 

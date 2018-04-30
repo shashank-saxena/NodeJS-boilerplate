@@ -2,7 +2,7 @@
   "name": "nodejs-boilerplate",
   "version": "1.0.0",
   "description": "sample structure to use in node js projects",
-  "main": "index.js",
+  "main": "app-server.js",
   "engines": {
     "node": "=8.11.1",
     "npm": "=5.8.0"
@@ -18,10 +18,10 @@
     "check-version": "node ./validate-environment",
     "eslint": "eslint *.js",
     "build": "run-s check-version eslint",
-    "dev": "npm run build && NODE_ENV=development node --inspect index",
-    "stage": "npm run build && NODE_ENV=staging node index",
+    "dev": "npm run build && NODE_ENV=development node --inspect app-server",
+    "stage": "npm run build && NODE_ENV=staging node app-server",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production node index"
+    "start": "NODE_ENV=production node app-server"
   },
   "directories": {
     "test": "tests"
@@ -51,12 +51,16 @@
     "dotenv": "~5.0.1",
     "express": "~4.16.3",
     "express-validation": "~1.0.2",
+    "express-validator": "^5.1.2",
     "joi": "~13.1.2",
     "jsonapi-serializer": "~3.5.6",
+    "jsonwebtoken": "^8.2.1",
     "request": "~2.85.0",
     "request-promise": "~4.2.2",
     "semver": "~5.5.0",
-    "winston": "~2.4.1",
-    "shelljs": "~0.8.1"
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0",
+    "shelljs": "~0.8.1",
+    "winston": "~2.4.1"
   }
 }
