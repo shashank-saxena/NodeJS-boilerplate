@@ -70,7 +70,7 @@
     "no-return-assign": 2,
     "no-self-compare": 2,
     "no-throw-literal": 2,
-    "no-unused-expressions": [ 2, { "allowShortCircuit": true } ],
+    "no-unused-expressions": [ 0, { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true } ],
     "no-useless-call": 2,
     "no-useless-concat": 2,
     "no-void": 2,
@@ -88,7 +88,7 @@
     "no-undef-init": 2,
     "no-unused-vars": 2,
 
-    "handle-callback-err": 1,
+    "handle-callback-err": 0,
     "no-new-require": 2,
 
     "array-bracket-spacing": [ 2, "always" ],

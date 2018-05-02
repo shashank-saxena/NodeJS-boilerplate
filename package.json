@@ -14,7 +14,7 @@
     "prepush": "node scripts/js/pre-push",
     "postcheckout": "node scripts/js/post-checkout",
     "postmerge": "node scripts/js/post-merge",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./test --recursive",
     "check-version": "node ./validate-environment",
     "eslint": "eslint *.js",
     "build": "run-s check-version eslint",
@@ -23,9 +23,7 @@
     "prestart": "npm run build",
     "start": "NODE_ENV=production node app-server"
   },
-  "directories": {
-    "test": "tests"
-  },
+  "directories": {},
   "repository": {
     "type": "git",
     "url": "git@github-newput:shashank-saxena/NodeJS-boilerplate.git"
@@ -37,11 +35,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "chai": "~3.2.0",
+    "chai-http": "~1.0.0",
     "chalk": "~2.4.0",
     "eslint": "~4.19.1",
     "eslint-plugin-filenames": "github:shashank-saxena/eslint-plugin-filenames",
     "eslint-plugin-json": "~1.2.0",
     "husky": "~0.14.3",
+    "mocha": "~5.1.1",
     "npm-run-all": "~4.1.2",
     "yaml-lint": "~1.2.3",
     "yargs": "~11.0.0"
@@ -51,15 +52,15 @@
     "dotenv": "~5.0.1",
     "express": "~4.16.3",
     "express-validation": "~1.0.2",
-    "express-validator": "^5.1.2",
+    "express-validator": "~5.1.2",
     "joi": "~13.1.2",
     "jsonapi-serializer": "~3.5.6",
-    "jsonwebtoken": "^8.2.1",
+    "jsonwebtoken": "~8.2.1",
     "request": "~2.85.0",
     "request-promise": "~4.2.2",
     "semver": "~5.5.0",
-    "sequelize": "^4.37.6",
-    "sequelize-cli": "^4.0.0",
+    "sequelize": "~4.37.6",
+    "sequelize-cli": "~4.0.0",
     "shelljs": "~0.8.1",
     "winston": "~2.4.1"
   }

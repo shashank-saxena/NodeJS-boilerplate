@@ -32,3 +32,6 @@ appRoutes(app);
 app.listen(appConfig.PORT, null, function() {
   console.log("Express webserver configured and listening at http://localhost:" + appConfig.PORT);
 });
+let appServer = app;
+
+module.exports = appServer;

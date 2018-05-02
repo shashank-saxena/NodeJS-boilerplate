@@ -14,7 +14,7 @@ function loadEnvVars() {
   } else if (process.env.NODE_ENV === "production") {
     envFilePath += ".production";
   } else {
-    envFilePath = null;
+    envFilePath = ".development";
   }
 
   if (fs.existsSync(path.resolve(envFilePath))) {
